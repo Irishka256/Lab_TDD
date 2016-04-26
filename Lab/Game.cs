@@ -12,6 +12,7 @@ namespace Lab
     /// </summary>
     public class Game
     {
+        private const int MAX_COUNT = 10;
         /// <summary>
         /// Номер игрока
         /// </summary>
@@ -92,7 +93,22 @@ namespace Lab
         /// </summary>
         public void SelectQuestions()
         {
-
+            selectedQuestions = new List<KeyValuePair<int, String>>();
+            if (questions.Count == MAX_COUNT)
+            {
+                for (int i = 0; i < MAX_COUNT; i++)
+                {
+                    selectedQuestions.Add(questions[i]);
+                }
+            }
+            else
+            {
+                int questionsCount = questions.Count; 
+                for (int i = 0; i < MAX_COUNT; i++)
+                {
+                    selectedQuestions.Add(questions[rand.Next(questionsCount)]);
+                }
+            }
         }
 
         public int Player
