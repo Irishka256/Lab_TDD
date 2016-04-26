@@ -37,5 +37,18 @@ namespace Test
                 Assert.Fail("Должен быть задан первый номер вопроса");
             }
         }
+
+         [TestMethod]
+         public void TestGameSelectQuestion()
+         {
+             game.LoadQuestions();
+             game.Start();
+             game.SelectQuestions();
+
+             int realCount = (game.SelectedQuestions != null ? game.SelectedQuestions.Count : 0);
+             int needCount = 10;
+
+             Assert.AreEqual(needCount, realCount, "Количество отобранных вопросов некорректно");
+         }
     }
 }
