@@ -111,6 +111,15 @@ namespace Lab
             }
         }
 
+        /// <summary>
+        /// Проверяет есть следующий вопрос или нет
+        /// </summary>
+        /// <returns>false - вопросов нет, игра окончена; true - вопросы есть, игра продолжается</returns>
+        public bool HasNextQuestion()
+        {
+            return false;
+        }
+
         public int Player
         {
             get { return player; }
