@@ -117,7 +117,7 @@ namespace Lab
         /// <returns>false - вопросов нет, игра окончена; true - вопросы есть, игра продолжается</returns>
         public bool HasNextQuestion()
         {
-            return false;
+            return (question != (MAX_COUNT + 1));
         }
 
         public int Player
