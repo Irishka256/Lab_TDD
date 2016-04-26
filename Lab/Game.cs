@@ -69,6 +69,13 @@ namespace Lab
             }
         }
 
+        /// <summary>
+        /// Метод старта игры, инициализирует номер игрока и номер вопроса
+        /// </summary>
+        public void Start()
+        {
+
+        }
 
         public int Player
         {
