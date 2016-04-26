@@ -12,7 +12,7 @@ namespace Lab
     /// </summary>
     public class Game
     {
-        public const int MAX_COUNT = 10;
+        private const int MAX_COUNT = 10;
         /// <summary>
         /// Номер игрока
         /// </summary>
