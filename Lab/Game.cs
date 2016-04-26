@@ -74,7 +74,8 @@ namespace Lab
         /// </summary>
         public void Start()
         {
-
+            player = 1;
+            question = 1;
         }
 
         public int Player
