@@ -27,6 +27,12 @@ namespace Lab
 
         public Game() { }
 
+        public void LoadQuestions()
+        {
+
+        }
+
+
         public int Player
         {
             get { return player; }
