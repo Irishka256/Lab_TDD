@@ -25,7 +25,16 @@ namespace Lab
         /// </summary>
         private List<KeyValuePair<int, String>> questions;
 
-        public Game() { }
+        /// <summary>
+        /// Список отобранных вопросов для игры <Ответ, Вопрос>
+        /// </summary>
+        private List<KeyValuePair<int, String>> selectedQuestions;
+
+        private Random rand;
+
+        public Game() {
+            rand = new Random();
+        }
 
         public void LoadQuestions()
         {
@@ -78,6 +87,14 @@ namespace Lab
             question = 1;
         }
 
+        /// <summary>
+        /// Метод отбора 10 случайных вопросов для игры
+        /// </summary>
+        public void SelectQuestions()
+        {
+
+        }
+
         public int Player
         {
             get { return player; }
@@ -96,5 +113,10 @@ namespace Lab
             set { questions = value; }
         }
 
+        public List<KeyValuePair<int, String>> SelectedQuestions
+        {
+            get { return selectedQuestions; }
+            set { selectedQuestions = value; }
+        }
     }
 }
