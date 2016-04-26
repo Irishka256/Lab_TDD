@@ -50,5 +50,23 @@ namespace Test
 
              Assert.AreEqual(needCount, realCount, "Количество отобранных вопросов некорректно");
          }
+
+         [TestMethod]
+         public void TestGameHashNextQuestion()
+         {
+             game.LoadQuestions();
+             game.Start();
+             game.SelectQuestions();
+
+             for (int i = 0; i < Game.MAX_COUNT; i++)
+             {
+                 if (!game.HasNextQuestion())
+                 {
+                     Assert.Fail("Некорректное количество вопросов {0}", i);
+                 }
+                 game.Question++;
+             }
+
+         }
     }
 }
