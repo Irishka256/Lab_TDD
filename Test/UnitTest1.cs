@@ -21,5 +21,21 @@ namespace Test
                 Assert.Fail("Вопросы не загружены. Загружено: {0}. Требуется: >= {1}", realSize, needMinimalSize);
             }
         }
+
+         [TestMethod]
+        public void TestGameStart()
+        {
+            game.Start();
+            //После старта должен быть задан первый игрок и первый номер вопроса
+            if (game.Player != 1)
+            {
+                Assert.Fail("Должен быть выбран первый игрок");
+            }
+
+            if (game.Question != 1)
+            {
+                Assert.Fail("Должен быть задан первый номер вопроса");
+            }
+        }
     }
 }
