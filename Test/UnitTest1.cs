@@ -16,7 +16,7 @@ namespace Test
             int realSize = (game.Questions != null ? game.Questions.Count : 0);
             int needMinimalSize = 10;
 
-            if (realSize <= needMinimalSize)
+            if (realSize < needMinimalSize)
             {
                 Assert.Fail("Вопросы не загружены. Загружено: {0}. Требуется: >= {1}", realSize, needMinimalSize);
             }

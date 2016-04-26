@@ -29,7 +29,44 @@ namespace Lab
 
         public void LoadQuestions()
         {
+            questions = new List<KeyValuePair<int, String>>();
+            String[] paths = Directory.GetFiles("Questions", "*.qst");
 
+            System.IO.StreamReader file = null;
+
+            foreach (String path in paths)
+            {
+                try
+                {
+                    file = new System.IO.StreamReader(path);
+                    if (file != null)
+                    {
+                        String question = String.Empty;
+                        int answer = -1;
+                        String line = String.Empty;
+                        int count = 0;
+
+                        while ((line = file.ReadLine()) != null)
+                        {
+                            if (count == 0)
+                            {
+                                answer = Convert.ToInt32(line);
+                            }
+                            else
+                            {
+                                question += count + "| " + line + "\n";
+                            }
+                            count++;
+                        }
+                        Console.WriteLine(question);
+                        questions.Add(new KeyValuePair<int, String>(answer, question));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
         }
 
 
