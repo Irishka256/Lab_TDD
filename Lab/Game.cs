@@ -118,6 +118,18 @@ namespace Lab
                     selectedQuestions.Add(questions[rand.Next(questionsCount)]);
                 }
             }
+
+            int r1, r2;
+            //Перемешаем вопросы
+            for (int i = 0; i < MAX_COUNT; i++)
+            {
+                r1 = rand.Next(MAX_COUNT);
+                r2 = rand.Next(MAX_COUNT);
+
+                var tmp = selectedQuestions[r1];
+                selectedQuestions[r1] = selectedQuestions[r2]; ;
+                selectedQuestions[r2] = tmp;
+            }
         }
 
         /// <summary>
@@ -145,7 +157,6 @@ namespace Lab
         /// <param name="answer"></param>
         public void CheckAnswer(int answer)
         {
-            Console.WriteLine("<<<<<<<<<< {0} {1}", player1, player2);
             int needAnswer = selectedQuestions[question - 2].Key;
             if (answer == needAnswer)
             {
@@ -161,7 +172,6 @@ namespace Lab
                 }
 
             }
-            Console.WriteLine(">>>>>>>>>>>> {0} {1}", player1, player2);
         }
 
         public int Player

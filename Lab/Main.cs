@@ -25,6 +25,7 @@ namespace Lab
             labelQuestion.Text = "Вопрос № " + (game.Question - 1);
             labelPlayer.Text = "Игрок №  " + (game.Player);
             numericAnswer.Value = 1;
+            questionInput.SelectionLength = 0;
             labelResult.Text = game.Player1 + " | " + game.Player2;
         }
 
