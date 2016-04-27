@@ -145,7 +145,21 @@ namespace Lab
         /// <param name="answer"></param>
         public void CheckAnswer(int answer)
         {
+            int needAnswer = selectedQuestions[question - 2].Key;
+            if (answer == needAnswer)
+            {
+                if (1 == player)
+                {
+                    player1++;
+                    player = 2;
+                }
+                else
+                {
+                    player2++;
+                    player = 1;
+                }
 
+            }
         }
 
         public int Player
