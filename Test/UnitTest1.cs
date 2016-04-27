@@ -92,9 +92,6 @@ namespace Test
             game.Start();
             game.SelectQuestions();
 
-            int player1 = 0;
-            int player2 = 0;
-
             while (game.HasNextQuestion())
             {
                 KeyValuePair<int, String> quest = game.NextQuestion();
@@ -102,7 +99,7 @@ namespace Test
             }
 
             int needAnswers = 5;
-            if (player1 != needAnswers || player2 != needAnswers)
+            if (game.Player1 != needAnswers || game.Player2 != needAnswers)
             {
                 Assert.Fail("Количество правильных ответов определено не правильно");
             }
