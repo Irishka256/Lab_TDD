@@ -85,5 +85,27 @@ namespace Test
                 }
             }
          }
+        [TestMethod]
+        public void TestGameCheckQuestion()
+        {
+            game.LoadQuestions();
+            game.Start();
+            game.SelectQuestions();
+
+            int player1 = 0;
+            int player2 = 0;
+
+            while (game.HasNextQuestion())
+            {
+                KeyValuePair<int, String> quest = game.NextQuestion();
+                game.CheckAnswer(quest.Key);
+            }
+
+            int needAnswers = 5;
+            if (player1 != needAnswers || player2 != needAnswers)
+            {
+                Assert.Fail("Количество правильных ответов определено не правильно");
+            }
+        } 
     }
 }
