@@ -46,6 +46,7 @@
             this.buttonAnswer.TabIndex = 9;
             this.buttonAnswer.Text = "Ответить";
             this.buttonAnswer.UseVisualStyleBackColor = true;
+            this.buttonAnswer.Click += new System.EventHandler(this.buttonAnswer_Click);
             // 
             // numericAnswer
             // 
@@ -54,6 +55,11 @@
             this.numericAnswer.Name = "numericAnswer";
             this.numericAnswer.Size = new System.Drawing.Size(101, 26);
             this.numericAnswer.TabIndex = 8;
+            this.numericAnswer.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // questionInput
             // 

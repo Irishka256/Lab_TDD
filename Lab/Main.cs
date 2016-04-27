@@ -24,6 +24,7 @@ namespace Lab
             questionInput.Text = game.NextQuestion().Value;
             labelQuestion.Text = "Вопрос № " + (game.Question - 1);
             labelPlayer.Text = "Игрок №  " + (game.Player);
+            numericAnswer.Value = 1;
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -33,6 +34,38 @@ namespace Lab
             game.SelectQuestions();
 
             initQuestion();
+        }
+
+        private void buttonAnswer_Click(object sender, EventArgs e)
+        {
+            if (game.HasNextQuestion())
+            {
+                int answer = Convert.ToInt32(numericAnswer.Value);
+                game.CheckAnswer(answer);
+                initQuestion();
+            }
+            else
+            {
+                int winner = 0;
+                if (game.Player1 > game.Player2)
+                {
+                    winner = 1;
+                }
+                else if (game.Player2 > game.Player1)
+                {
+                    winner = 2;
+                }
+
+                if (winner == 0)
+                {
+                    MessageBox.Show("Победила дружба");
+                }
+                else
+                {
+                    MessageBox.Show("Победил игрок № " + winner);
+                }
+                this.Close();
+            }
         }
     }
 }

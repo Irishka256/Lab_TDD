@@ -145,6 +145,7 @@ namespace Lab
         /// <param name="answer"></param>
         public void CheckAnswer(int answer)
         {
+            Console.WriteLine("<<<<<<<<<< {0} {1}", player1, player2);
             int needAnswer = selectedQuestions[question - 2].Key;
             if (answer == needAnswer)
             {
@@ -160,6 +161,7 @@ namespace Lab
                 }
 
             }
+            Console.WriteLine(">>>>>>>>>>>> {0} {1}", player1, player2);
         }
 
         public int Player
