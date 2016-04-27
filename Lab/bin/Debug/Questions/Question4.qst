@@ -1,0 +1,9 @@
+5
+int pow(int x, int y) {
+	return x * y;
+}
+
+imt main() {
+	int p = pow(2, 2);
+	return 0;
+}

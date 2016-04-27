@@ -1,0 +1,10 @@
+5
+class Car {
+	private int name;
+	private int speed;
+	
+	public Cat(int name, int speed) {
+		this.name = name;
+		this.speed = speed;
+	}
+}
