@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Lab;
+using System.Collections.Generic;
 
 namespace Test
 {
@@ -67,6 +68,22 @@ namespace Test
                  game.Question++;
              }
 
+         }
+
+         [TestMethod]
+         public void TestGameNextQuestion()
+         {
+             game.LoadQuestions();
+             game.Start();
+             game.SelectQuestions();
+
+            while (game.HasNextQuestion()) {
+                KeyValuePair<int, String> quest = game.NextQuestion();
+                if (quest.Key == -1 && quest.Value == null)
+                {
+                    Assert.Fail("Метод вернул некорректный вопрос");
+                }
+            }
          }
     }
 }
