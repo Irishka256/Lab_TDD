@@ -57,6 +57,7 @@
             // 
             // questionInput
             // 
+            this.questionInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.questionInput.Location = new System.Drawing.Point(12, 27);
             this.questionInput.Multiline = true;
             this.questionInput.Name = "questionInput";
@@ -106,6 +107,7 @@
             this.Controls.Add(this.labelAnswer);
             this.Controls.Add(this.labelPlayer);
             this.Name = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericAnswer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

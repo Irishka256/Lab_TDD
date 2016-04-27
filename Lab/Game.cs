@@ -71,7 +71,7 @@ namespace Lab
                             }
                             else
                             {
-                                question += count + "| " + line + "\n";
+                                question += count + "| " + line + "\r\n";
                             }
                             count++;
                         }

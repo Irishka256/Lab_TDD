@@ -12,9 +12,27 @@ namespace Lab
 {
     public partial class Main : Form
     {
+        Game game = new Game();
+
         public Main()
         {
             InitializeComponent();
+        }
+
+        public void initQuestion()
+        {
+            questionInput.Text = game.NextQuestion().Value;
+            labelQuestion.Text = "Вопрос № " + (game.Question - 1);
+            labelPlayer.Text = "Игрок №  " + (game.Player);
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            game.LoadQuestions();
+            game.Start();
+            game.SelectQuestions();
+
+            initQuestion();
         }
     }
 }
