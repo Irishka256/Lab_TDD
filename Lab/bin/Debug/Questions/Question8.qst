@@ -1,8 +1,13 @@
-1
-int v = 1;
-for (int i = 0; i < 10; i++) {
-	v++;
-	if (v == 6) {
-		z++;
+9
+abstract class Car {
+	int p1;
+	int p2;
+	
+	public Car(int p1, int p2);
+	
+	public int method2();
+	
+	public int method1() {
+		return p1 + 200 - (3.14 * p2 * 1) / 15;
 	}
-} 
+}

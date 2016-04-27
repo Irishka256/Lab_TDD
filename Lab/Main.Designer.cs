@@ -34,6 +34,7 @@
             this.labelQuestion = new System.Windows.Forms.Label();
             this.labelAnswer = new System.Windows.Forms.Label();
             this.labelPlayer = new System.Windows.Forms.Label();
+            this.labelResult = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericAnswer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,11 +102,22 @@
             this.labelPlayer.TabIndex = 6;
             this.labelPlayer.Text = "Игрок №";
             // 
+            // labelResult
+            // 
+            this.labelResult.AutoSize = true;
+            this.labelResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelResult.Location = new System.Drawing.Point(166, 4);
+            this.labelResult.Name = "labelResult";
+            this.labelResult.Size = new System.Drawing.Size(51, 20);
+            this.labelResult.TabIndex = 10;
+            this.labelResult.Text = "label1";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 470);
+            this.Controls.Add(this.labelResult);
             this.Controls.Add(this.buttonAnswer);
             this.Controls.Add(this.numericAnswer);
             this.Controls.Add(this.questionInput);
@@ -128,6 +140,7 @@
         private System.Windows.Forms.Label labelQuestion;
         private System.Windows.Forms.Label labelAnswer;
         private System.Windows.Forms.Label labelPlayer;
+        private System.Windows.Forms.Label labelResult;
     }
 }
 

@@ -25,6 +25,7 @@ namespace Lab
             labelQuestion.Text = "Вопрос № " + (game.Question - 1);
             labelPlayer.Text = "Игрок №  " + (game.Player);
             numericAnswer.Value = 1;
+            labelResult.Text = game.Player1 + " | " + game.Player2;
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -38,10 +39,10 @@ namespace Lab
 
         private void buttonAnswer_Click(object sender, EventArgs e)
         {
+            int answer = Convert.ToInt32(numericAnswer.Value);
+            game.CheckAnswer(answer);
             if (game.HasNextQuestion())
             {
-                int answer = Convert.ToInt32(numericAnswer.Value);
-                game.CheckAnswer(answer);
                 initQuestion();
             }
             else
