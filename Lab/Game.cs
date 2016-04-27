@@ -25,11 +25,18 @@ namespace Lab
         /// Список вопросов <Ответ, Вопрос>
         /// </summary>
         private List<KeyValuePair<int, String>> questions;
-
         /// <summary>
         /// Список отобранных вопросов для игры <Ответ, Вопрос>
         /// </summary>
         private List<KeyValuePair<int, String>> selectedQuestions;
+        /// <summary>
+        /// Количество правильных ответов 1-ого игрока
+        /// </summary>
+        private int player1;
+        /// <summary>
+        /// Количество правильных ответов 2-ого игрока
+        /// </summary>
+        private int player2;
 
         private Random rand;
 
@@ -86,6 +93,8 @@ namespace Lab
         {
             player = 1;
             question = 1;
+            player1 = 0;
+            player2 = 0;
         }
 
         /// <summary>
@@ -126,8 +135,17 @@ namespace Lab
         /// <returns></returns>
         public KeyValuePair<int, String> NextQuestion()
         {
+            KeyValuePair<int, String> q = selectedQuestions[question - 1];
+            question++;
+            return q;
+        }
+        /// <summary>
+        /// Метод проверяет ответ игрока с эталонным и увеличивает счетчик правильных ответов текущего игрока
+        /// </summary>
+        /// <param name="answer"></param>
+        public void CheckAnswer(int answer)
+        {
 
-            return new KeyValuePair<int, String>(-1, null);
         }
 
         public int Player
@@ -152,6 +170,18 @@ namespace Lab
         {
             get { return selectedQuestions; }
             set { selectedQuestions = value; }
+        }
+
+        public int Player1
+        {
+            get { return player1; }
+            set { player1 = value; }
+        }
+
+        public int Player2
+        {
+            get { return player2; }
+            set { player2 = value; }
         }
     }
 }
