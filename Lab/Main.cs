@@ -12,6 +12,7 @@ namespace Lab
 {
     public partial class Main : Form
     {
+        //Игра
         Game game = new Game();
 
         public Main()
