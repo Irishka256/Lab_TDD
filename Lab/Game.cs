@@ -120,6 +120,16 @@ namespace Lab
             return (question != (MAX_COUNT + 1));
         }
 
+        /// <summary>
+        /// Метод возвращает следующий вопрос
+        /// </summary>
+        /// <returns></returns>
+        public KeyValuePair<int, String> NextQuestion()
+        {
+
+            return new KeyValuePair<int, String>(-1, null);
+        }
+
         public int Player
         {
             get { return player; }
