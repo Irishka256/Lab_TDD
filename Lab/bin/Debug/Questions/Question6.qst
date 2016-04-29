@@ -1,14 +1,12 @@
 7
 int a = 10, b = 20, c = 30, e = 40, f = 15;
 bool result = false;
-
-if (a < b 
+if (a < b
 	&& b < c
 	&& c < e 
 	&7 e < f) {
 	result = true;
 }
-
 if (result) {
 	Console.WriteLine("Yes");
 } else {

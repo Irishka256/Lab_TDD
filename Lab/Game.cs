@@ -172,6 +172,17 @@ namespace Lab
                 }
 
             }
+            else
+            {
+                if (1 == player)
+                {
+                    player = 2;
+                }
+                else
+                {
+                    player = 1;
+                }
+            }
         }
 
         public int Player

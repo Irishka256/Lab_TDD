@@ -50,6 +50,7 @@ namespace Lab
             else
             {
                 int winner = 0;
+                labelResult.Text = game.Player1 + " | " + game.Player2;
                 if (game.Player1 > game.Player2)
                 {
                     winner = 1;
